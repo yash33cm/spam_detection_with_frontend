@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam detection</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .outer-container {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .inner-container {
+            display: flex;
+            height: 300px;
+            border: 1px solid lightgrey;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .container {
+            flex: 0.5
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid grey;
+            padding: 8px;
+            margin: 12px
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .right-container {
+            height: 250px;
+            width: 250px;
+
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+
+        textarea {
+            padding: 10px
+        }
+
+        .btn:hover {
+            background-color: greenyellow;
+            color: white;
+            /* transition: all ease-in-out 3s; */
+            cursor: pointer;
+            /* outline: none; */
+            /* border: none; */
+        }
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        .results {
+            margin: 10px;
+            /* font-weight: ; */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Spam Detection EDP</h1>
+    <div class="outer-container">
+
+        <div class="inner-container">
+            <div class="container left">
+                <h3>Enter a mail</h3>
+                <form action="/predict" class="form" method="post">
+                    <textarea name="mail" id="" cols="30" rows="15"></textarea>
+                    <input class="btn" type="submit" value="predict">
+                </form>
+            </div>
+            <div class="container right">
+                <div class="right-container">
+                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_GnORnk.json" background="#F0F0F0"
+                        speed="0.5" style="width: 250px; height: 250px;" loop autoplay>
+                    </lottie-player>
+
+                </div>
+
+
+            </div>
+        </div>
+        <h3 class="results">{{prediction}}</h3>
+        <h3 class="results">{{prob}}</h3>
+
+    </div>
+
+</body>
+
+</html>
