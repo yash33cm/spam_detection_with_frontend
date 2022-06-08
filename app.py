@@ -82,4 +82,4 @@ else:
     print('Spam mail')
 
 pickle.dump(model,open('model.pkl','wb'))
-log_reg=pickle.load(open('model.pkl','rb'))
+# log_reg=pickle.load(open('model.pkl','rb'))

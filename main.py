@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask,request, url_for, redirect, render_template
 import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -42,8 +41,6 @@ def predict():
 
     input_mail=[request.form['mail']]
     print(len(input_mail[0]))
-    if len(input_mail[0])<2:
-        return redirect("http://127.0.0.1:5000/")
     input_data_features = feature_extraction.transform(input_mail)
     # making prediction
     prediction = log_reg.predict(input_data_features)
