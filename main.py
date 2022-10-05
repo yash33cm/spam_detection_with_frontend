@@ -25,7 +25,7 @@ def predict():
     X = mail_data['Message']
 
     Y = mail_data['Category']
-    # print(X)
+    # print(X) is good
     # print(Y)
     X_train, X_test, Y_train, Y_test = train_test_split(
         X, Y, test_size=0.2, random_state=3)
